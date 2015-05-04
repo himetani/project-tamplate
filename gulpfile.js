@@ -34,13 +34,6 @@ gulp.task('browser-sync', ['inject'], function() {
     });
 });
 
-gulp.task('parse-option', function(cb) {
-    return exec('ruby create-json-file.rb', {cwd: './util/'}, function(err) {
-        if(err) console.error(err);
-        else cb();
-    });
-});
-
 gulp.task('serve', function(cb) {
     var server = gls.new('./server/app.js');
     server.start();
